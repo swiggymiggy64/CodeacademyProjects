@@ -153,7 +153,7 @@ main {
 /* Splash Styles */
 
 .splashArea {
-  background-image: url(./resources/img/1.\ splash-background.png);
+  background-image: url(./resources/img/1.\ splash-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -211,7 +211,7 @@ main {
 /* Product Styles */
 
 .prodCoffeeArea {
-  background-image: url(./resources/img/1.\ Coffee-background.png);
+  background-image: url(./resources/img/1.\ Coffee-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 825px;
@@ -232,7 +232,7 @@ main {
 }
 
 .prodFoodArea {
-  background-image: url(./resources/img/1.\ Food-background.png);
+  background-image: url(./resources/img/1.\ Food-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 825px;
@@ -402,7 +402,7 @@ main {
 /* Team Styles */
 
 .teamArea {
-  background-image: url(./resources/img/1.\ Team\ Background.png);
+  background-image: url(./resources/img/1.\ Team\ Background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 825px;

@@ -1,0 +1,571 @@
+/* Universal Styles */
+
+:root {
+  --background: #141414;
+}
+
+html {
+  font-size: 16px;
+  color: white;
+}
+
+body {
+  background-color: var(--background);
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Alice', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  display: block;
+  font-family: 'Alice', serif;
+  margin: 15px 0;
+}
+
+.flexCon1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.titleFrame {
+  padding: 30px;
+  width: auto;
+  background-color: var(--background);
+  border-radius: 50px;
+  border: 2px solid white;
+}
+
+.imgFrame {
+  margin-top: 0;
+  width: 500px;
+}
+
+.imgFrame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Header Styles */
+
+header {
+  border-bottom: 1px solid white;
+  height: 4rem;
+}
+
+header .flexCon1 {
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo img {
+  height: 60px;
+  margin: 1px 0 0 50px;
+}
+
+header nav ul {
+  padding-left: 10px;
+  margin-right: 50px;
+}
+
+header nav li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+  font-size: 1.25rem;
+}
+
+@media only screen and (max-width: 800px) {
+  header nav ul {
+    margin-right: 25px;
+  }
+
+  header nav li {
+    padding-right: 10px;
+  }
+
+  header .logo img {
+    margin-left: 25px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  header {
+    height: 3.5rem;
+  }
+
+  header .flexCon1 {
+    margin-top: 1px;
+  }
+  
+  header nav ul {
+    margin-right: 5px;
+  }
+  
+  header nav li {
+    padding-right: 10px;
+    font-size: 1rem;
+  }
+
+  header .logo img {
+    height: 50px;
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  header {
+    height: 3rem;
+  }
+  
+  header nav ul {
+    margin-right: 5px;
+  }
+  
+  header nav li {
+    padding: 6px;
+    font-size: 0.75rem;
+    background-color: #3d2314;
+    border-radius: 5px;
+  }
+
+  header .logo img {
+    height: 40px;
+    margin-left: 5px;
+  }
+}
+
+/* Main Styles */
+
+main {
+  
+}
+
+/* Splash Styles */
+
+.splashArea {
+  background-image: url(./resources/img/1.\ splash-background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 835px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.splashArea img {
+  margin-top: -50px;
+}
+
+.splashStatement {
+  margin-top: -100px;
+  padding: 0 20px;
+  background-color: var(--background);
+  width: 80%;
+  border-radius: 100px;
+  border: 2px solid white;
+}
+
+@media only screen and (max-width: 1700px) {
+  .splashArea {
+    height: 750px;
+  }
+}
+
+@media only screen and (max-width: 1375px) {
+  .splashArea {
+    height: 700px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .splashArea {
+    height: auto;
+  }
+
+  .splashArea img {
+    margin-top: 30px;
+  }
+  
+  .splashStatement {
+    margin: 40px;
+    padding: 10px 50px;
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  
+}
+
+/* Product Styles */
+
+.prodCoffeeArea {
+  background-image: url(./resources/img/1.\ Coffee-background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 825px;
+  width: 98%;
+  margin: 0px auto;
+  margin-top: 4rem;
+  border: 2px solid white;
+  border-radius: 50px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.prodCoffeeCon {
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.prodFoodArea {
+  background-image: url(./resources/img/1.\ Food-background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 825px;
+  width: 99%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  border: 2px solid white;
+  border-radius: 50px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.prodFoodCon {
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.prodItem {
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  width: auto;
+  background-color: var(--background);
+  border-radius: 15px;
+  border: 2px solid white;
+}
+
+.prodItem img{
+  border-radius: 15px;
+}
+
+.prodItem .textFrame {
+  margin: 0;
+  width: 500px;
+}
+
+@media only screen and (max-width: 1700px) {
+  .prodCoffeeArea {
+    height: 750px;
+  }
+
+  .titleFrame {
+    padding: 25px;
+  }
+
+  .titleFrame h1 {
+    margin: 10px 0;
+  }
+
+  .prodFoodArea {
+    height: 750px;
+  }
+  
+  .prodItem {
+    padding: 15px;
+  }
+  
+  .prodItem .imgFrame {
+    width: 400px;
+  }
+  
+  .prodItem .textFrame {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 1375px) {
+  .prodCoffeeArea {
+    height: 700px;
+  }
+
+  .titleFrame {
+    padding: 20px;
+  }
+
+  .titleFrame h1 {
+    margin: 5px 0;
+  }
+
+  .prodFoodArea {
+    height: 700px;
+  }
+  .prodItem {
+    padding: 10px
+  }
+  
+  .prodItem .imgFrame {
+    width: 325px;
+  }
+  
+  .prodItem .textFrame {
+    width: 300px;
+  }
+
+  .prodItem h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .prodCoffeeArea {
+    height: auto;
+    margin-top: 3rem;
+  }
+
+  .titleFrame {
+    margin: 25px 0;
+    padding: 12.5px;
+    width: 81.5%;
+  }
+
+  .titleFrame h1 {
+    margin: 5px 0;
+  }
+
+  .prodCoffeeCon {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .prodFoodArea {
+    height: auto;
+    margin-top: 3rem;
+  }
+
+  .prodFoodCon {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .prodItem {
+    width: 85%;
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .prodItem .imgFrame {
+    width: 100%;
+  }
+  
+  .prodItem .textFrame {
+    width: auto;
+  }
+
+  .prodItem h2 {
+    font-size: 1.75rem;
+  }
+  .prodItem h4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .prodItem h2 {
+    font-size: 1.5rem;
+  }
+  .prodItem h4 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Team Styles */
+
+.teamArea {
+  background-image: url(./resources/img/1.\ Team\ Background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 825px;
+  width: 99%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  border: 2px solid white;
+  border-radius: 50px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.teamArea .titleFrame {
+  padding: 30px;
+  width: auto;
+}
+
+.teamCon {
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.teamItem {
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--background);
+  border-radius: 15px;
+  border: 2px solid white;
+}
+
+.teamItem .imgFrame {
+  width: 325px;
+}
+
+.teamItem .imgFrame img {
+  border-radius: 15px;
+}
+
+.teamItem .textFrame {
+  margin: 0;
+  width: 500px;
+  font-size: 1rem;
+}
+
+.teamItem .textFrame h2,
+.teamItem .textFrame h3,
+.teamItem .textFrame h4 {
+  margin: 8px 0 3px 0;
+}
+
+@media only screen and (max-width: 1700px) {
+  .teamArea {
+    height: 750px;
+  }
+
+  .teamArea .titleFrame {
+    padding: 25px;
+  }
+
+  .teamArea .titleFrame h1 {
+    margin: 10px 0;
+  }
+  
+  .teamItem {
+    padding: 15px;
+  }
+  
+  .teamItem .imgFrame {
+    width: 300px;
+  }
+  
+  .teamItem .textFrame {
+    width: 400px;
+    font-size: 0.95rem;
+  }
+}
+
+@media only screen and (max-width: 1375px) {
+  .teamArea {
+    height: 700px;
+  }
+
+  .teamArea .titleFrame {
+    padding: 20px;
+  }
+
+  .teamArea .titleFrame h1 {
+    margin: 10px 0;
+  }
+  
+  .teamItem {
+    padding: 10px;
+  }
+  
+  .teamItem .imgFrame {
+    width: 250px;
+  }
+  
+  .teamItem .textFrame {
+    width: 330px;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .teamArea {
+    height: auto;
+  }
+
+  .teamArea .titleFrame {
+    margin: 25px 0;
+    padding: 12.5px;
+    width: 81.5%;
+  }
+
+  .teamArea .titleFrame h1 {
+    margin: 10px 0;
+  }
+  
+  .teamCon {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamItem {
+    width: 85%;
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .teamItem .imgFrame {
+    width: 250px;
+  }
+  
+  .teamItem .textFrame {
+    width: auto;
+    padding: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .teamItem h2 {
+    font-size: 1.5rem;
+  }
+  .teamItem h4 {
+    font-size: 1.15rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .teamItem h2 {
+    font-size: 1.25rem;
+  }
+  .teamItem h4 {
+    font-size: 1rem;
+  }
+}
+
+/* Footer Styles */
+
+footer {
+  height: 3rem;
+  padding: 5px;
+}

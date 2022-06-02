@@ -146,10 +146,6 @@ header nav li {
 
 /* Main Styles */
 
-main {
-  
-}
-
 /* Splash Styles */
 
 .splashArea {
@@ -202,10 +198,6 @@ main {
     padding: 10px 50px;
     width: 60%;
   }
-}
-
-@media only screen and (max-width: 550px) {
-  
 }
 
 /* Product Styles */
@@ -272,6 +264,10 @@ main {
   width: 500px;
 }
 
+.prodItem h4{
+  font-size: 1.25rem;
+}
+
 @media only screen and (max-width: 1700px) {
   .prodCoffeeArea {
     height: 750px;
@@ -332,6 +328,10 @@ main {
 
   .prodItem h2 {
     font-size: 1.25rem;
+  }
+
+  .prodItem h4{
+    font-size: 1.10rem;
   }
 }
 

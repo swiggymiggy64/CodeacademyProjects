@@ -1,12 +1,19 @@
-/* Universal Styles */
+/* Universal Styles ------------------------------------------------------------------------------------- */
 
 :root {
-  --background: #141414;
+  --lightgrey: #D3D3D3;
+  --background: white;
+  --mainOrange: #FF8C00;
+  --darkOrange: #B36200;
+  --lightOrange: #FF9819;
+  --darkBlue: #0078B3;
+  --lightBlue: #00ACFF;
+  --footer: #141414;
 }
 
 html {
   font-size: 16px;
-  color: white;
+  color: black;
 }
 
 body {
@@ -15,8 +22,10 @@ body {
 }
 
 a {
-  color: white;
-  text-decoration: underline;
+  color: black;
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.25rem;
 }
 
 h1,
@@ -26,20 +35,32 @@ h4,
 h5 {
   display: block;
   margin: 15px 0;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
-.flexCon1 {
+h1 {
+  font-family: 'Bebas Neue', cursive;
+}
+
+.flexCon1 { /* Remember to set width if things arent spreading out correctly */
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-.titleFrame {
-  padding: 30px;
-  width: auto;
-  background-color: var(--background);
-  border-radius: 50px;
-  border: 2px solid white;
+.wrapper {
+  overflow: hidden;
+ }
+
+.textFrame {
+  padding: 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.aOfferFlex {
+  justify-content: start;
+  width: 50%;
 }
 
 .imgFrame { /*Image scale without distorting. Width changes size*/
@@ -53,25 +74,1035 @@ h5 {
   height: auto;
 }
 
-/* Header Styles */
+.textFrame {
+  width: 700px;
+}
+
+/* Mobile Header Styles ------------------------------------------------------------------------------------- */
+
+.mobileNavContainer {
+  display: none;
+}
+
+.mobileNavBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+.mobileNavBtn input {
+  display: none;
+}
+
+.mobileNavIcon { /* Making the three line Icon*/
+  margin-right: 20px;
+  width: 20px;
+  height: 4px;
+  background-color: var(--footer);
+  border-radius: 5px;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.mobileNavIcon::before,
+.mobileNavIcon::after{ /* Making the three line Icon*/
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background: black;
+  border-radius: 5px;
+  transition: all .3s ease;
+}
+
+.mobileNavIcon::before{ /* Three line Icon spacing & alignment*/
+  transform: translateY(-7px) translateX(-10px);
+}
+
+.mobileNavIcon::after{ /* Three line Icon spacing & alignment*/
+  transform: translateY(7px) translateX(-10px);
+}
+
+.mobileNavBtn input:checked ~.mobileNavIcon::before{ /* Three line Icon rotation when clicked*/
+  transform: rotate(45deg);
+}
+
+.mobileNavBtn input:checked ~.mobileNavIcon::after{ /* Three line Icon rotation when clicked*/
+  transform: rotate(-45deg);
+}
+
+.mobileNavBtn input:checked ~.mobileNavIcon{ /* Middle line dissappearing*/
+  background: transparent;
+  transition: all 0.1s ease-in-out;
+}
+
+.mobileNavbar {
+  position: absolute;
+  top: -500px;
+  background-color:  black;
+  height: auto;
+  width: 100%;
+  left: 0;
+  transition: all .5s ease-in-out;
+  padding: 15px 0;
+  list-style: none;
+}
+
+.mobileNavBtn input ~.mobileNavbar{
+  top: 61px;
+  transform: scale(1, 0);
+  transition: transform 300ms ease-in-out;
+  transform-origin: top;
+}
+
+.mobileNavBtn input:checked ~.mobileNavbar{
+  top: 61px;
+  transform: scale(1, 1);
+}
+
+.mobileNavbar li {
+  padding: 0.75rem 0;
+}
+
+.mobileNavbar li a {
+  color: white;
+}
+
+@media only screen and (max-width: 710px) {
+  .navContainer nav {
+    display: none;
+  }
+
+  .mobileNavContainer {
+    display: block;
+  }
+}
+
+/* Header Styles ------------------------------------------------------------------------------------- */
+
+header {
+  height: 4.5rem;
+  border-bottom: 5px solid var(--mainOrange);
+}
+
+.navContainer {
+  width: 100%; /* Needed to space out Logo & Nav links via justify-content: space-between */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.navContainer .logo {
+  margin-left: 3rem;
+}
+
+.navContainer .logo img {
+  height: 3.25rem;
+}
+
+.navContainer nav ul {
+  padding: 0;
+}
+
+.navContainer nav ul li {
+  display: inline;
+  list-style: none;
+  padding-right: 1rem;
+}
+
+.navContainer ul li a { /* Both Desktop & Mobile */
+  padding: 0.5rem;
+  border-radius: 25px;
+  transition: all 0.35s ease-in-out ;
+}
+
+.navContainer li a:hover { /* Both Desktop & Mobile */
+  background-color: var(--mainOrange);
+  transition: all 0.15s ease-in-out ;
+}
+
+@media only screen and (max-width: 910px) {
+  .navContainer .logo {
+    margin-left: 2rem;
+  }
+
+  .navContainer nav ul li {
+    padding-right: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .navContainer .logo {
+    margin-left: 1rem;
+  }
+
+  .navContainer nav ul li {
+    padding-right: 0rem;
+  }
+
+  .navContainer nav ul li a {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .navContainer .logo {
+    margin-left: 2rem;
+  }
+}
+
+/* Main Styles ------------------------------------------------------------------------------------- */
 
 
 
-/* Main Styles */
+/* Splash Styles ------------------------------------------------------------------------------------- */
+
+.splashArea {
+  background-image: url(./resources/img/1.Splash-Background.jpg);
+  background-position: center;
+  height: 50rem;
+}
+
+.splashContainer {
+  height: 50rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.splashItem {
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+.splashItem h1 {
+  font-size: 5rem;
+  color: var(--mainOrange);
+  text-shadow: #000 0px 0px 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.findGym h1 {
+  font-size: 3.5rem;
+  color: var(--mainOrange);
+  text-shadow: #000 0px 0px 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.form {
+  background-color: var(--mainOrange);
+  padding-top: 1rem;
+  border-radius: 25px;
+}
+
+.customerAddress {
+  margin-bottom: 0.5rem;
+  width: 25rem;
+  height: 2rem;
+  border: 1px solid darkgrey;
+  font-family: 'Barlow Condensed', sans-serif;
+  border-radius: 5px;
+}
+
+.searchBtn {
+  font-size: 1.15rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  background-color: lightgrey;
+  border: 1px solid darkgrey;
+  width: auto;
+  height: 2.3rem;
+  border-radius: 5px;
+}
+
+.searchBtn:hover {
+  background-color: darkgrey;
+  border: 1px solid lightgrey;
+}
+
+.searchBtn:active {
+  color: white;
+  
+}
+
+@media only screen and (max-width: 930px) {
+  .splashItem h1 {
+    font-size: 4rem;
+  }
+  
+  .findGym h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .splashItem h1 {
+    font-size: 3.5rem;
+  }
+  
+  .findGym h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .splashArea {
+    height: 45rem;
+  }
+  
+  .splashContainer {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .splashItem h1 {
+    font-size: 3rem;
+  }
+  
+  .findGym h1 {
+    font-size: 2rem;
+  }
+
+  .customerAddress {
+    width: 20rem;  
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .splashItem h1 {
+    font-size: 2.5rem;
+  }
+
+  .findGym h1 {
+    font-size: 2rem;
+  }
+
+  .customerAddress {
+    width: 15rem;   
+  }  
+}
+
+/* Offer Styles ------------------------------------------------------------------------------------- */
+
+.offerContainer {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.offerItem1 {
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--mainOrange);
+  background: linear-gradient(to left, var(--mainOrange) 50%, var(--darkOrange) 50%) right;
+  background-size: 200%;
+  transition: 0.20s ease-in-out;
+}
+
+.offerItem1:hover {
+  background-position: left;
+  color: white;
+}
+
+.offerItem2 {
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--lightBlue);
+  background: linear-gradient(to left, var(--lightBlue) 50%, var(--darkBlue) 50%) right;
+  background-size: 200%;
+  transition: 0.20s ease-in-out;
+}
+
+.offerItem2:hover {
+  background-position: left;
+  color: white;
+}
+
+.offerItem1 h3,
+.offerItem2 h3 {
+  padding: 0 0.75rem;
+  font-size: 1.75rem;
+}
+
+@media only screen and (max-width: 1170px) {
+  .offerItem1 h3,
+  .offerItem2 h3 {
+    font-size: 1.55rem;
+  }
+}
+
+@media only screen and (max-width: 1040px) {
+  .offerItem1 h3,
+  .offerItem2 h3 {
+    font-size: 1.35rem;
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  .offerItem1 h3,
+  .offerItem2 h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .offerContainer {
+    flex-direction: column;
+  }
+
+  .aOfferFlex {
+    width: 100%;
+  }
+
+  .offerItem1 h1,
+  .offerItem2 h1 {
+    font-size: 2.5rem;
+  }
+
+  .offerItem1 h3,
+  .offerItem2 h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Product Styles ------------------------------------------------------------------------------------- */
+
+.productArea {
+  margin-top: 15px;
+}
+
+.productItem {
+  flex-direction: column;
+  margin: 20px;
+  padding: 1rem;
+}
+
+.productItem h1 {
+  font-size: 4rem;
+  color: var(--mainOrange);
+  text-shadow: #000 0px 0px 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn1 {
+  background-color: var(--mainOrange);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  border: 0px solid white;
+  border-radius: 3px;
+  width: auto;
+  height: 4rem;
+  cursor: pointer;
+  transition: all 0.35s ease-in-out;
+}
+
+.btn1:hover {
+  background-color: var(--darkOrange);
+  color: white;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn1:active {
+  background-color: var(--lightBlue);
+  color:  black;
+  transition: all 0s ease-in-out;
+}
+
+.imgTitle1 {
+  background-image: url(./resources/img/2.Gym-1.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 700px;
+  height: 600px;
+  transition: transform .25s ease-in-out;
+}
+
+.imgTitle1:hover {
+  transform: scale(1.1);
+  transition: transform .25s ease-in-out;
+}
+
+.imgTitle2 {
+  background-image: url(./resources/img/2.Classes.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 700px;
+  height: 600px;
+  transition: transform .25s ease-in-out;
+}
+
+.imgTitle2:hover {
+  transform: scale(1.1);
+  transition: transform .25s ease-in-out;
+}
+
+.imgTitle3 {
+  background-image: url(./resources/img/2.Personal\ Trainer2.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 700px;
+  height: 600px;
+  transition: transform .25s ease-in-out;
+}
+
+.imgTitle3:hover {
+  transform: scale(1.1);
+  transition: transform .25s ease-in-out;
+}
+
+.imgTitle4 {
+  background-image: url(./resources/img/2.Facility-Tour.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 700px;
+  height: 600px;
+  transition: transform .25s ease-in-out;
+}
+
+.imgTitle4:hover {
+  transform: scale(1.1);
+  transition: transform .25s ease-in-out;
+}
+
+@media only screen and (max-width: 1600px) {
+  .productItem {
+    margin: 20px 0px;
+    padding: 0.75rem;
+  }
+  
+  .textFrame h2 {
+    width: 580px;
+    font-size: 2.4rem;
+  }
+
+  .imgTitle1 {
+    width: 600px;
+    height: 500px;
+  }
+
+  .imgTitle2 {
+    width: 600px;
+    height: 500px;
+  }
+
+  .imgTitle3 {
+    width: 600px;
+    height: 500px;
+  }
+
+  .imgTitle4 {
+    width: 600px;
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .productItem {
+    margin: 20px 0px;
+    padding: 0.5rem;
+  }
+  
+  .textFrame h2 {
+    width: 480px;
+    font-size: 2rem;
+  }
+
+  .imgTitle1 {
+    width: 500px;
+    height: 400px;
+  }
+
+  .imgTitle2 {
+    width: 500px;
+    height: 400px;
+  }
+
+  .imgTitle3 {
+    width: 500px;
+    height: 400px;
+  }
+
+  .imgTitle4 {
+    width: 500px;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .productItem {
+    padding: 0.25rem;
+  }
+  
+  .textFrame h2 {
+    width: 430px;
+    font-size: 1.75rem;
+  }
+
+  .imgTitle1 {
+    width: 450px;
+    height: 350px;
+  }
+
+  .imgTitle2 {
+    width: 450px;
+    height: 350px;
+  }
+
+  .imgTitle3 {
+    width: 450px;
+    height: 350px;
+  }
+
+  .imgTitle4 {
+    width: 450px;
+    height: 350px;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .productContainer{
+   flex-direction: column;
+  }
+
+  .textFrame h2 {
+    width: 630px;
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+
+  .imgTitle1 {
+    width: 650px;
+    height: 550px;
+  }
+
+  .imgTitle2 {
+    width: 650px;
+    height: 550px;
+  }
+
+  .imgTitle3 {
+    width: 650px;
+    height: 550px;
+  }
+
+  .imgTitle4 {
+    width: 650px;
+    height: 550px;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .textFrame h2 {
+    width: 580px;
+    font-size: 1.6rem;
+  }
+
+  .imgTitle1 {
+    width: 600px;
+    height: 500px;
+  }
+
+  .imgTitle2 {
+    width: 600px;
+    height: 500px;
+  }
+
+  .imgTitle3 {
+    width: 600px;
+    height: 500px;
+  }
+
+  .imgTitle4 {
+    width: 600px;
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .textFrame h2{
+    width: 480px;
+    font-size: 1.5rem;
+  }
+
+  .imgTitle1 {
+    width: 500px;
+    height: 400px;
+  }
+
+  .imgTitle2 {
+    width: 500px;
+    height: 400px;
+  }
+
+  .imgTitle3 {
+    width: 500px;
+    height: 400px;
+  }
+
+  .imgTitle4 {
+    width: 500px;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .textFrame h2{
+    width: 380px;
+    font-size: 1.4rem;
+  }
+
+  .imgTitle1 {
+    width: 400px;
+    height: 300px;
+  }
+
+  .imgTitle2 {
+    width: 400px;
+    height: 300px;
+  }
+
+  .imgTitle3 {
+    width: 400px;
+    height: 300px;
+  }
+
+  .imgTitle4 {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+/* Explore Area Styles ------------------------------------------------------------------------------------- */
+
+.exploreArea {
+  background-color: var(--darkBlue);
+  margin-top: 15px;
+}
+
+.exploreItem {
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+}
+
+.exploreItem h1 {
+  font-size: 4rem;
+  color: var(--mainOrange);
+  text-shadow: #000 0px 0px 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.exploreItem .textFrame {
+  color: white;
+}
+
+.btn2 {
+  background-color: var(--mainOrange);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  border: 0px solid white;
+  border-radius: 3px;
+  width: auto;
+  height: 4rem;
+  cursor: pointer;
+  transition: all 0.35s ease-in-out;
+}
+
+.btn2:hover {
+  background-color: var(--darkOrange);
+  color: white;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn2:active {
+  background-color: var(--lightBlue);
+  color:  black;
+  transition: all 0s ease-in-out;
+}
+
+.imgTitle5 {
+  background-image: url(./resources/img/3.Workouts.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 700px;
+  height: 400px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.imgTitle5:hover {
+  transform: scale(1.1);
+  transition: transform 0.25s ease-in-out;
+}
+
+.imgTitle6 {
+  background-image: url(./resources/img/3.Equipment.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 700px;
+  height: 400px;
+  transition: transform 0.25s ease-in-out;
+}
+
+.imgTitle6:hover {
+  transform: scale(1.1);
+  transition: transform 0.25s ease-in-out;
+}
 
 
+@media only screen and (max-width: 1600px) {
+  .exploreItem {
+    margin: 20px 0px;
+    padding: 0.75rem;
+  }
+  
+  .textFrame {
+    width: 600px;
+    font-size: 1.7rem;
+  }
 
-/* ??? Styles */
+  .imgTitle5 {
+    width: 600px;
+    height: 500px;
+  }
+
+  .imgTitle6 {
+    width: 600px;
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .exploreItem {
+    margin: 20px 0px;
+    padding: 0.5rem;
+  }
+  
+  .textFrame {
+    width: 500px;
+    font-size: 1.4rem;
+  }
+
+  .imgTitle5 {
+    width: 500px;
+    height: 400px;
+  }
+
+  .imgTitle6 {
+    width: 500px;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .exploreItem {
+    padding: 0.25rem;
+  }
+  
+  .textFrame {
+    width: 450px;
+    font-size: 1.25rem;
+  }
+
+  .imgTitle5 {
+    width: 450px;
+    height: 350px;
+  }
+
+  .imgTitle6 {
+    width: 450px;
+    height: 350px;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .exploreContainer{
+   flex-direction: column;
+  }
+
+  .exploreItem {
+    padding: 0.25rem;
+  }
+  
+  .textFrame {
+    width: 450px;
+    font-size: 1.25rem;
+  }
+
+  .imgTitle5 {
+    width: 650px;
+    height: 550px;
+  }
+
+  .imgTitle6 {
+    width: 650px;
+    height: 550px;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .imgTitle5 {
+    width: 600px;
+    height: 500px;
+  }
+
+  .imgTitle6 {
+    width: 600px;
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .imgTitle5 {
+    width: 500px;
+    height: 400px;
+  }
+
+  .imgTitle6 {
+    width: 500px;
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .imgTitle5 {
+    width: 400px;
+    height: 300px;
+  }
+
+  .imgTitle6 {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+/* Offer2 Styles ------------------------------------------------------------------------------------- */
+
+.offer2Container {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.offer2Item1 {
+  padding: 145px 0;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--mainOrange);
+  background: linear-gradient(to left, var(--mainOrange) 50%, var(--darkOrange) 50%) right;
+  background-size: 200%;
+  transition: 0.20s ease-in-out;
+}
+
+.offer2Item1:hover {
+  background-position: left;
+  color: white;
+}
+
+.offer2Item2 {
+  padding: 145px 0;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--lightBlue);
+  background: linear-gradient(to left, var(--lightBlue) 50%, var(--darkBlue) 50%) right;
+  background-size: 200%;
+  transition: 0.20s ease-in-out;
+}
+
+.offer2Item2:hover {
+  background-position: left;
+  color: white;
+}
+
+.offer2Item1 h3,
+.offer2Item2 h3 {
+  padding: 0 0.75rem;
+  font-size: 1.75rem;
+}
 
 
+@media only screen and (max-width: 1500px) {
+  .offer2Item1 h3,
+  .offer2Item2 h3 {
+    font-size: 1.5rem;
+  }
 
-/* ??? Styles */
+}
 
+@media only screen and (max-width: 1300px) {
+  .offer2Item1 h3,
+  .offer2Item2 h3 {
+    font-size: 1.4rem;
+  }
+}
 
+@media only screen and (max-width: 1220px) {
+  .offer2Item1 h3,
+  .offer2Item2 h3 {
+    font-size: 1.75rem;
+  }
+}
 
-/* ??? Styles */
+@media only screen and (max-width: 820px) {
+  .offer2Item1 h3,
+  .offer2Item2 h3 {
+    font-size: 1.5rem;
+  }
+}
 
+@media only screen and (max-width: 710px) {
+  .offer2Container {
+    flex-direction: column;
+  }
 
+  .aOfferFlex {
+    width: 100%;
+  }
 
-/* Footer Styles */
+  .offer2Item1 { 
+    padding: 50px 0;
+  }
 
+  .offer2Item2 { 
+    padding: 50px 0;
+  }
+
+  .offer2Item1 h1,
+  .offer2Item2 h1 {
+    font-size: 2.5rem;
+  }
+
+  .offerItem1 h3,
+  .offerItem2 h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Footer Styles ------------------------------------------------------------------------------------- */
+
+footer {
+  background-color: var(--footer);
+  color: white;
+}
+
+footer .navContainer {
+  width: 100%; /* Needed to space out Logo & Nav links via justify-content: space-between */
+  justify-content: center;
+}
+
+footer .logo {
+  margin-top: 7px;
+  margin-right: 2rem;
+}
+
+footer a {
+  color: white;
+}
+
+footer .navContainer li a:hover {
+  color: black;
+}
+
+footer p {
+  padding-bottom: 1rem;
+}

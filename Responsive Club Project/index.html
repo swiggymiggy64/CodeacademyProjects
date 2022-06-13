@@ -1,35 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./normalize.css">
   <link rel="stylesheet" href="./styles.css">
-  <title>Document</title>
+  <title>Omega Gym</title>
 </head>
 <body>
-  <header>
-    <div class="flexCon1">
-      <a href="#" class="logo"><img src="./resources/img/" alt=" Logo"></a>
+  <header class="navArea flexCon1">
+    <div class="navContainer flexCon1">
+      <a href="#" class="logo"><img src="./resources/img/logo2.png" alt=" Logo"></a>
       <nav>
         <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
+          <li><a href="#">Become A Member</a></li>
+          <li><a href="#">Find A Gym</a></li>
+          <li><a href="#">Classes</a></li>
+          <li><a href="#">Personal Training</a></li>
+          <li><a href="#">Facility Tour</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+      <div class="mobileNavContainer">
+        <label for="mobileNavCheck" class="mobileNavBtn">
+          <input type="checkbox" id="mobileNavCheck">
+          <div class="mobileNavIcon"></div>
+          <ul class="mobileNavbar">
+            <li><a href="#">Become A Member</a></li>
+            <li><a href="#">Find A Gym</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Personal Training</a></li>
+            <li><a href="#">Facility Tour</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </label>
+      </div>
     </div>
   </header>
   <main>
+    <div class="splashArea flexCon1">
+      <div class="splashContainer flexCon1">
+        <div class="splashItem flexCon1">
+          <h1>Each New Day Is An Opportunity To Improve Yourself.</h1>
+        </div>
+        <div class="splashItem flexCon1">
+          <h1>What Are You Waiting For?</h1>
+        </div>
+        <div class="splashItem findGym flexCon1">
+          <h1>Find your nearest Omega Gym</h1>
+        </div>
 
+        <div class="splashItem form flexCon1">
+          <form method="get">
+            <input type="text" placeholder="Enter postcode, area or town" class="customerAddress">
+            <input type="submit" value="Search" class="searchBtn">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="offerArea flexCon1">
+      <div class="offerContainer flexCon1">
+        <a href="" class="aOfferFlex flexCon1">
+          <div class="offerItem1 flexCon1">
+            <h1>Sign Up!</h1>
+            <h3>Limited Special 60 days free offer + No joining fee!</h3>
+          </div>
+        </a>
+        <a href="" class="aOfferFlex">
+          <div class="offerItem2 flexCon1">
+            <h1>Try a week for free!</h1>
+            <h3>Take a free week to see if Omega Gym is right for you!</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="productArea flexCon1">
+      <div class="productContainer flexCon1">
+        <div class="productItem flexCon1">
+          <div class="wrapper">
+            <a href="">
+              <div class="imgTitle1 flexCon1">
+                <h1>Find a Gym</h1>
+              </div>
+            </a>
+          </div>
+          <div class="textFrame flexCon1">
+            <h2>With Gyms all across the country, finding one local has never been easier.</h2>
+          </div>
+          <button class="btn1">Find A Gym</button>
+        </div>
+
+        <div class="productItem flexCon1">
+          <div class="wrapper">
+            <a href="">
+              <div class="imgTitle2 flexCon1">
+                <h1>Classes</h1>
+              </div>
+            </a>
+          </div>
+          <div class="textFrame flexCon1">
+            <h2>We have a range of different classes to choose from. Join in on the fun!</h2>
+          </div>
+          <button class="btn1">Join A Class</button>
+        </div>
+
+        <div class="productItem flexCon1">
+          <div class="wrapper">
+            <a href="">
+              <div class="imgTitle3 flexCon1">
+                <h1>Personal Training</h1>
+              </div>
+            </a>
+          </div>
+          <div class="textFrame flexCon1">
+            <h2>Take your training to the next level with our specialist team of personal trainers.</h2>
+          </div>
+          <button class="btn1">Hire A Trainer</button>
+        </div>
+        
+        <div class="productItem flexCon1">
+          <div class="wrapper">
+            <a href="">
+              <div class="imgTitle4 flexCon1">
+                <h1>Facility Tour</h1>
+              </div>
+            </a>
+          </div>
+          <div class="textFrame flexCon1">
+            <h2>Want to take a look at out facilities? Use our online guided tour!</h2>
+          </div>
+          <button class="btn1">Take A Tour</button>
+        </div>
+      </div>
+    </div>
     
+    <div class="exploreArea flexCon1">
+      <div class="exploreContainer flexCon1">
+        <div class="exploreItem flexCon1">
+          <div class="wrapper">
+            <a href="">
+              <div class="imgTitle5 flexCon1">
+                <h1>Workouts</h1>
+              </div>
+            </a>
+          </div>
+          <div class="textFrame flexCon1">
+            <h2>Set your goals & get started with our in-house workout plans.</h2>
+          </div>
+          <button class="btn2">Explore Workouts</button>
+        </div>
 
+        <div class="exploreItem flexCon1">
+          <div class="wrapper">
+            <a href="">
+              <div class="imgTitle6 flexCon1">
+                <h1>Equipment</h1>
+              </div>
+            </a>
+          </div>
+          <div class="textFrame flexCon1">
+            <h2>Looking for a certain something? Find it with out equipment lookup!</h2>
+          </div>
+          <button class="btn2">Explore Equipment</button>
+        </div>
+      </div>
+    </div>
+      
+    <div class="offer2Area flexCon1">
+      <div class="offer2Container flexCon1">
+        <a href="" class="aOfferFlex">
+          <div class="offer2Item1 flexCon1">
+            <h1>Sign Up!</h1>
+            <h3>Explore our membership options & see which one is right for you!</h3>
+          </div>
+        </a>
+        <a href="" class="aOfferFlex">
+          <div class="offer2Item2 flexCon1">
+            <h1>Special Offers!</h1>
+            <h3>Reap rewards if you help a friend join & check out our reward scheme!</h3>
+          </div>
+        </a>
+      </div>
+    </div>
   </main>
-  <footer>
-    <p>Copyright &copy; </p>
+  <footer class="navArea flexCon1">
+    <div class="navContainer flexCon1">
+      <a href="#" class="logo"><img src="./resources/img/logo2.png" alt=" Logo"></a>
+      <nav>
+        <ul>
+          <li><a href="#">Become A Member</a></li>
+          <li><a href="#">Find A Gym</a></li>
+          <li><a href="#">Classes</a></li>
+          <li><a href="#">Personal Training</a></li>
+          <li><a href="#">Facility Tour</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p>Copyright &copy; Mega Gym</p>
   </footer>
 </body>
 </html>
